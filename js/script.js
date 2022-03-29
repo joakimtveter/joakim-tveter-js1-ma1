@@ -37,10 +37,10 @@ paragraphs.forEach((paragraph) => (paragraph.style.color = 'red'));
 
 // Question 6
 const resultsContainer = document.querySelector('.results');
-resultsContainer.innerHTML = '<p>New paragraph</p>';
+const newParagraph = document.createElement('p');
+newParagraph.innerText = 'New paragraph';
+resultsContainer.appendChild(newParagraph);
 resultsContainer.style.backgroundColor = 'yellow';
-
-// I would prefer to use createElement, createTextNode, and appendChild, but the task called for innerHTML
 
 // Question 7
 function logNames(list) {
@@ -52,8 +52,6 @@ function logNames(list) {
 logNames(cats);
 
 // Question 8
-
-// Create a function called createCats. The function will have one parameter called cats.
 function createCats(cats) {
   const catsContainer = document.querySelector('.cat-container');
   for (let i = 0; i < cats.length; i++) {
