@@ -18,7 +18,7 @@ const cat = {
   complain: () => console.log('Meow!'),
 };
 
-// Not part of the assignment:
+// Envoking the method was not part of the assignment:
 // cat.complain();
 
 //Question 2
@@ -32,13 +32,15 @@ heading.style.fontSize = '2rem';
 heading.classList.add('subheading');
 
 // Quewstion 5
+// Convert nodelist to array to get access to all array methoods
 const paragraphs = [...document.querySelectorAll('p')];
 paragraphs.forEach((paragraph) => (paragraph.style.color = 'red'));
 
 // Question 6
+// Got premission from Connor O'Brien to not use innerHTML to solve this task.
 const resultsContainer = document.querySelector('.results');
 const newParagraph = document.createElement('p');
-newParagraph.innerText = 'New paragraph';
+newParagraph.textContent = 'New paragraph';
 resultsContainer.appendChild(newParagraph);
 resultsContainer.style.backgroundColor = 'yellow';
 
@@ -52,6 +54,8 @@ function logNames(list) {
 logNames(cats);
 
 // Question 8
+// Got premission from Connor O'Brien to not use innerHTML to solve this task.
+// This means that i don't return anything from the function.
 function createCats(cats) {
   const catsContainer = document.querySelector('.cat-container');
   for (let i = 0; i < cats.length; i++) {
@@ -60,12 +64,12 @@ function createCats(cats) {
     // Create name node
     const catNameElement = document.createElement('h5');
     const catNameText = cats[i].name ? cats[i].name : 'Name unknown';
-    catNameElement.innerText = catNameText;
+    catNameElement.textContent = catNameText;
 
     // Create Age node
     const catAgeElement = document.createElement('p');
     const catAgeText = cats[i].age ? cats[i].age : 'Age unknown';
-    catAgeElement.innerText = catAgeText;
+    catAgeElement.textContent = catAgeText;
 
     // Append nodes to container
     catContainer.appendChild(catNameElement);
